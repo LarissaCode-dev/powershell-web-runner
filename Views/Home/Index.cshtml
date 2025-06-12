@@ -1,0 +1,67 @@
+﻿@model WebAppToExecutePowershell.Models.ProcessSearchModel
+@{
+    ViewData["Title"] = "Process Manager";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Process Filter</h5>
+                    
+                    <form method="post">
+                        <div class="form-group mb-3">
+                            <label for="ProcessName" class="form-label">Process Name Filter</label>
+                            <input type="text" class="form-control" id="ProcessName" name="ProcessName" 
+                                   value="@Model.ProcessName"
+                                   placeholder="Enter process name to filter">
+                            <div class="form-text text-muted">
+                                Leave empty to see all processes, or enter a name to filter
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search Processes</button>
+                    </form>
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger mt-3">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                        </div>
+                    }
+
+                    @if (Model.Results?.Any() == true)
+                    {
+                        <div class="table-responsive mt-3">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>ID</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Results)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Id</td>
+                                            <td>@item.Status</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else if (Model.Results != null)
+                    {
+                        <div class="alert alert-info mt-3">
+                            No processes found matching the filter.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
