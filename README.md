@@ -20,26 +20,31 @@ A .NET Core web application that executes PowerShell scripts and displays result
 ## Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/powershell-web-runner.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd powershell-web-runner
 ```
 
 3. Restore dependencies:
+
 ```bash
 dotnet restore
 ```
 
 4. Run the application:
+
 ```bash
 dotnet run
 ```
 
 5. Open your browser and navigate to:
+
 ```
 https://localhost:5001
 ```
