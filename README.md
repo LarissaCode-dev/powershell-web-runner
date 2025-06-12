@@ -64,6 +64,13 @@ https://localhost:5001
 - `/Services` - PowerShell execution service
 - `/Scripts` - PowerShell scripts
 
+## Views
+Getting all the process by not passing parameters:
+![image](https://github.com/user-attachments/assets/4bfe2b59-e5f6-44d2-97f2-32d7556a2b14)
+
+Passing Name:
+![image](https://github.com/user-attachments/assets/a41ca20b-424e-47a7-8b97-3cb3a6192022)
+
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
